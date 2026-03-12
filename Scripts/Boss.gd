@@ -4,7 +4,7 @@ const VERTICAL_SPEED = 100.0
 const RANGE = 1200
 
 var travelled_distance = 0
-var health = 300
+var health = 250
 var dying = false
 var active = false
 var stop_y = 200
@@ -54,7 +54,7 @@ func _physics_process(delta):
 
 
 func _on_score_increment(amount):
-	if Signals.score >= 150 and not boss_started:
+	if Signals.score >= 300 and not boss_started:
 		boss_started = true
 		var spawner = get_tree().current_scene.get_node_or_null("Spawner")
 		if spawner and spawner.spawnTimer:
@@ -116,7 +116,7 @@ func execute_bullet_attack() -> void:
 			bullet.set("direction", dir)
 
 		get_tree().current_scene.add_child(bullet)
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(1).timeout
 
 
 func execute_laser_attack() -> void:
