@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cvchkfjjbtpex"]
 
-[ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="1_hcm6b"]
+[ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/Sprite/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="1_hcm6b"]
 [ext_resource type="PackedScene" uid="uid://dcaf51o1wdttd" path="res://Assets/Player.tscn" id="1_j4qrl"]
-[ext_resource type="Texture2D" uid="uid://do5avwj2o2888" path="res://Textures/SpaceShooterAssets/starBig.png" id="2_vfxjo"]
+[ext_resource type="Texture2D" uid="uid://do5avwj2o2888" path="res://Textures/Sprite/SpaceShooterAssets/starBig.png" id="2_vfxjo"]
 [ext_resource type="PackedScene" uid="uid://dnvfc3x6d2ee0" path="res://Assets/HUD.tscn" id="5_l7vlk"]
 [ext_resource type="PackedScene" uid="uid://bcueu1lt21knd" path="res://Assets/Spawner.tscn" id="5_ly247"]
 [ext_resource type="Script" uid="uid://c48efi766rnyp" path="res://Scripts/ShakeCamera.gd" id="6_ly247"]

@@ -89,5 +89,16 @@ position = Vector2(236.00002, 475)
 scale = Vector2(0.3633196, 0.3633196)
 stream = ExtResource("8_qf8tx")
 autoplay = true
+parameters/looping = true
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1931409809]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 747.0
+offset_right = 581.0
+offset_bottom = 787.7715
+max_value = 1.0
+step = 0.001
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
