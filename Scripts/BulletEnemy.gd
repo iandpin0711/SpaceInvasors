@@ -1,21 +1,35 @@
 extends Area2D
 
+# Projectile speed
 const SPEED = 500
+# Maximum distance it can travel
 const RANGE = 1200
+
+# Movement direction (down by default)
 var direction = Vector2.DOWN
+# Tracks how far it has moved
 var travelled_distance = 0
 
+# Called when the node enters the scene
 func _ready():
+	# Play bullet animation
 	$AnimatedSprite2D.play("bullet")
 
+# Called every physics frame
 func _physics_process(delta):
+	# Move in the chosen direction
 	position += direction * SPEED * delta
-	
+	# Add to travelled distance
 	travelled_distance += SPEED * delta
+	# Remove if it went too far
 	if travelled_distance > RANGE:
 		queue_free()
 
+# Called when projectile hits something
 func _on_body_entered(body):
+	# Only affect objects that can take damage
 	if body.has_method("take_damage"):
+		# Deal damage
 		body.take_damage()
+		# Destroy projectile
 		queue_free()

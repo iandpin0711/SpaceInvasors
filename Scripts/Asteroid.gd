@@ -1,101 +1,59 @@
 extends CharacterBody2D
 
-
-# --------------------------------------------------
 # Movement configuration
-# --------------------------------------------------
-# Minimum and maximum forward speed
 var minSpeed = 40
 var maxSpeed = 60
-
-# Minimum and maximum rotation speed
 var minRotationRate = -20
 var maxRotationRate = 20
-
-# Actual values assigned at runtime
 var speed = 0
 var rotationRate = 0
 
-
-# --------------------------------------------------
-# Health and death state
-# --------------------------------------------------
+# Health
 var health = 50
 var dying = false
 
-
-# --------------------------------------------------
-# Travel distance control
-# --------------------------------------------------
-# Maximum distance the object can travel before being removed
+# Max distance it can travel
 const RANGE = 1200
-
-# Tracks the total distance travelled
 var travelled_distance = 0
 
-
-# --------------------------------------------------
-# Initialization
-# --------------------------------------------------
 # Called when the node enters the scene
 func _ready():
-	# Assign random movement values within the allowed ranges
+	# Pick random speed and rotation
 	speed = randf_range(minSpeed, maxSpeed)
 	rotationRate = randf_range(minRotationRate, maxRotationRate)
 
-
-# --------------------------------------------------
-# Physics update
-# --------------------------------------------------
-# Runs every physics frame
+# Called every physics frame
 func _physics_process(delta):
-
-	# Apply continuous rotation
+	# Rotate the object
 	rotation_degrees += rotationRate * delta
-
-	# Move the object downward
+	# Move it down
 	position.y += speed * delta
-
-	# Track travelled distance
+	# Track how far it has moved
 	travelled_distance += speed * delta
 	
-	# Remove the object if it exceeds its allowed range
+	# Remove it if it went too far
 	if travelled_distance > RANGE:
 		queue_free()
 
-
-# --------------------------------------------------
-# Damage handling
-# --------------------------------------------------
 # Called when the object takes damage
 func take_damage():
-
-	# Prevent damage processing if already dying
+	# Ignore if already dying
 	if dying:
 		return
 	
 	# Reduce health
 	health -= 1
 
-	# Check if health reached zero
+	# Check if dead
 	if health <= 0:
 		dying = true
-
-		# Add score to the global score system
+		# Add points and play death animation
 		Signals.score += 50
 		Signals.emit_signal("on_score_increment", 50)
-
-		# Play death animation
 		$Sprite2D.play("die")
 
-
-# --------------------------------------------------
-# Animation finished callback
-# --------------------------------------------------
-# Triggered when a Sprite2D animation ends
+# Called when a Sprite2D animation finishes
 func _on_sprite_2d_animation_finished():
-
-	# If the finished animation is the death animation,
-	# remove the object from the scene
+	# Remove object after death animation
 	if $Sprite2D.animation == "die":
 		queue_free()

@@ -1,18 +1,9 @@
 extends Powerup
 
-# --------------------------------------------------
-# Power-up configuration
-# --------------------------------------------------
-# Duration (in seconds) that the triple shot ability lasts
+# How long the triple shot lasts (in seconds)
 var TRIPLESHOT_TIME = 10
 
-
-# --------------------------------------------------
-# Power-up application
-# --------------------------------------------------
-# Called when the player collects or activates this power-up
+# Called when the player gets power-up
 func applyPowerup(player):
-
-	# Apply the triple shot ability to the player
-	# for the configured duration
+	# Give the player triple shot
 	player.applyTripleShot(TRIPLESHOT_TIME)

@@ -1,50 +1,30 @@
 extends Area2D
 
-
-# --------------------------------------------------
-# Movement configuration
-# --------------------------------------------------
-# Constant speed of the projectile
+# Projectile speed
 const SPEED = 500
-
-# Maximum distance the projectile can travel
+# Max distance it can travel
 const RANGE = 1200
 
-# Direction of movement (default is downward)
+# Movement direction (down by default)
 var direction = Vector2.DOWN
-
-# Tracks how far the projectile has travelled
+# Tracks how far it has moved
 var travelled_distance = 0
 
-
-# --------------------------------------------------
-# Physics update
-# --------------------------------------------------
-# Runs every physics frame
+# Called every physics frame
 func _physics_process(delta):
-
-	# Move the projectile in the specified direction
+	# Move in the chosen direction
 	position += direction * SPEED * delta
-	
-	# Update travelled distance
+	# Add to travelled distance
 	travelled_distance += SPEED * delta
-
-	# Remove the projectile if it exceeds its range
+	# Remove if it went too far
 	if travelled_distance > RANGE:
 		queue_free()
 
-
-# --------------------------------------------------
-# Collision handling
-# --------------------------------------------------
-# Triggered when the projectile collides with a body
+# Called when projectile hits something
 func _on_body_entered(body):
-
-	# Check if the body has a damage method
+	# Only affect objects that can take damage
 	if body.has_method("take_damage"):
-
-		# Apply damage to the body
+		# Deal damage
 		body.take_damage()
-
-		# Destroy the projectile after impact
+		# Destroy projectile
 		queue_free()
