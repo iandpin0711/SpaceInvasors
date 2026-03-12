@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://whhw6mp36weo"]
+
+[ext_resource type="Script" uid="uid://dtelei34tjmsw" path="res://Scripts/HealthPowerup.gd" id="1_a4ibi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_60hmq"]
+load_path = "res://.godot/imported/powerup.png-32e0fa499610a4b1b4c3c31bbad1909d.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_koaoo"]
+radius = 33.0
+
+[node name="HealthPowerUp" type="Area2D" unique_id=1897940466]
+script = ExtResource("1_a4ibi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1172011354]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_60hmq")
+region_enabled = true
+region_rect = Rect2(830, 72, 344, 339)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1289319357]
+shape = SubResource("CircleShape2D_koaoo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

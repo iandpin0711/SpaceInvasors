@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://d260jb0id7nm0"]
+
+[ext_resource type="Script" uid="uid://cpw8wa5sj30km" path="res://Scripts/BulletEnemy.gd" id="1_te72g"]
+[ext_resource type="Texture2D" uid="uid://crck0osja585n" path="res://Textures/Projectiles/Player_charged_beam (16 x 16).png" id="2_te72g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7qka"]
+atlas = ExtResource("2_te72g")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hckc7"]
+atlas = ExtResource("2_te72g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdi3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7qka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hckc7")
+}],
+"loop": false,
+"name": &"bullet",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4jp7"]
+size = Vector2(12.9629545, 11.94444)
+
+[node name="BulletEnemy" type="Area2D" unique_id=1366575101]
+collision_layer = 8
+script = ExtResource("1_te72g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=843869083]
+texture_filter = 1
+scale = Vector2(2.1600013, 2.1600013)
+sprite_frames = SubResource("SpriteFrames_pdi3l")
+animation = &"bullet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1060382983]
+position = Vector2(-5.364418e-07, 0.09999645)
+scale = Vector2(2.1600013, 2.1600013)
+shape = SubResource("RectangleShape2D_t4jp7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

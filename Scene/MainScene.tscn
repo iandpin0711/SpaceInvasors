@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cvchkfjjbtpex"]
+
+[ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="1_hcm6b"]
+[ext_resource type="PackedScene" uid="uid://dcaf51o1wdttd" path="res://Assets/Player.tscn" id="1_j4qrl"]
+[ext_resource type="Texture2D" uid="uid://do5avwj2o2888" path="res://Textures/SpaceShooterAssets/starBig.png" id="2_vfxjo"]
+[ext_resource type="PackedScene" uid="uid://dnvfc3x6d2ee0" path="res://Assets/HUD.tscn" id="5_l7vlk"]
+[ext_resource type="PackedScene" uid="uid://bcueu1lt21knd" path="res://Assets/Spawner.tscn" id="5_ly247"]
+[ext_resource type="Script" uid="uid://c48efi766rnyp" path="res://Scripts/ShakeCamera.gd" id="6_ly247"]
+[ext_resource type="PackedScene" uid="uid://cknlfu85av0kb" path="res://Assets/Boss.tscn" id="7_nr04c"]
+[ext_resource type="AudioStream" uid="uid://3cr4wm04ilnp" path="res://Textures/Audio/mainscenemusic.mp3" id="8_i8335"]
+
+[node name="MainScene" type="Node" unique_id=1418652142]
+
+[node name="HUD" parent="." unique_id=50843658 instance=ExtResource("5_l7vlk")]
+z_index = 500
+offset_left = -3.0517578e-05
+offset_right = -3.0517578e-05
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1746939558]
+z_index = -100
+texture_filter = 1
+position = Vector2(296.2732, 405.162)
+rotation = -3.1415925
+scale = Vector2(4.7224026, 3.1412308)
+texture = ExtResource("1_hcm6b")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background" unique_id=602152470]
+position = Vector2(0.07581496, 125.36558)
+amount = 40
+texture = ExtResource("2_vfxjo")
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(63, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+angle_min = 50.0
+angle_max = 720.0
+scale_amount_min = 0.5
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Background" unique_id=784560795]
+position = Vector2(0.07581496, 125.36558)
+amount = 40
+texture = ExtResource("2_vfxjo")
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(63, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+angle_min = 50.0
+angle_max = 720.0
+scale_amount_min = 0.5
+
+[node name="Player" parent="." unique_id=887185852 instance=ExtResource("1_j4qrl")]
+position = Vector2(303, 733)
+
+[node name="Spawner" parent="." unique_id=287377373 instance=ExtResource("5_ly247")]
+position = Vector2(297, -102)
+
+[node name="Cam" type="Camera2D" parent="." unique_id=1573718594]
+anchor_mode = 0
+script = ExtResource("6_ly247")
+
+[node name="Boss" parent="." unique_id=1464264140 instance=ExtResource("7_nr04c")]
+position = Vector2(297, -278)
+
+[node name="SceneMusic" type="AudioStreamPlayer2D" parent="." unique_id=650124322]
+position = Vector2(236.00002, 475)
+scale = Vector2(0.3633196, 0.3633196)
+stream = ExtResource("8_i8335")
+autoplay = true
+parameters/looping = true

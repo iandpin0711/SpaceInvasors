@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://d1pohp2pk4q1q"]
+
+[ext_resource type="Script" uid="uid://bj1sy0xryxcel" path="res://Scripts/MainMenu.gd" id="1_6o0c3"]
+[ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/Sprite/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="2_d4yab"]
+[ext_resource type="Texture2D" uid="uid://do5avwj2o2888" path="res://Textures/Sprite/SpaceShooterAssets/starBig.png" id="3_o3nbu"]
+[ext_resource type="PackedScene" uid="uid://bcueu1lt21knd" path="res://Assets/Spawner.tscn" id="5_o3nbu"]
+[ext_resource type="Texture2D" uid="uid://b6b8d0iyk21ug" path="res://Textures/title.png" id="5_v3p41"]
+[ext_resource type="Script" uid="uid://dq4ixuu82krrw" path="res://Scripts/SpawnerMenu.gd" id="6_v3p41"]
+[ext_resource type="Texture2D" uid="uid://boafpf83jv1rt" path="res://Textures/Button/play_button.png" id="7_6nqpc"]
+[ext_resource type="AudioStream" uid="uid://blktohpd3uyk2" path="res://Textures/Audio/menu.mp3" id="8_qf8tx"]
+
+[node name="Menu" type="Control" unique_id=795671825]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6o0c3")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=988507551]
+z_index = -100
+texture_filter = 1
+position = Vector2(296.2732, 405.162)
+rotation = -3.1415925
+scale = Vector2(4.7224026, 3.1412308)
+texture = ExtResource("2_d4yab")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background" unique_id=1596821491]
+position = Vector2(0.07581496, 125.36558)
+amount = 40
+texture = ExtResource("3_o3nbu")
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(63, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+angle_min = 50.0
+angle_max = 720.0
+scale_amount_min = 0.5
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Background" unique_id=1635432482]
+position = Vector2(0.07581496, 125.36558)
+amount = 40
+texture = ExtResource("3_o3nbu")
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(63, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+angle_min = 50.0
+angle_max = 720.0
+scale_amount_min = 0.5
+
+[node name="Title" type="Sprite2D" parent="." unique_id=95402823]
+z_index = 100
+texture_filter = 1
+position = Vector2(301, 264)
+texture = ExtResource("5_v3p41")
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=1304663842]
+z_index = 100
+texture_filter = 1
+layout_mode = 0
+offset_left = 236.00002
+offset_top = 475.0
+offset_right = 638.00006
+offset_bottom = 606.0
+scale = Vector2(0.3633196, 0.3633196)
+texture_normal = ExtResource("7_6nqpc")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=156030594]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true
+
+[node name="Spawner" parent="." unique_id=287377373 instance=ExtResource("5_o3nbu")]
+position = Vector2(297, -102)
+script = ExtResource("6_v3p41")
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=777802098]
+position = Vector2(236.00002, 475)
+scale = Vector2(0.3633196, 0.3633196)
+stream = ExtResource("8_qf8tx")
+autoplay = true
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_texture_button_pressed"]

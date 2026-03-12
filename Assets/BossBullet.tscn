@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cus3p2sqg3yhx"]
+
+[ext_resource type="Script" uid="uid://b74twfieef0o1" path="res://Scripts/BossBullet.gd" id="1_8auoo"]
+[ext_resource type="Texture2D" uid="uid://gbyhyid8mhli" path="res://Textures/Fire Effect and Bullet 16x16.png" id="2_8auoo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcy20"]
+atlas = ExtResource("2_8auoo")
+region = Rect2(34, 0, 17, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhekh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcy20")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8auoo"]
+radius = 14.0
+height = 90.0
+
+[node name="BossBullet" type="Area2D" unique_id=1557963704]
+script = ExtResource("1_8auoo")
+
+[node name="Bullet" type="AnimatedSprite2D" parent="." unique_id=1203806083]
+texture_filter = 1
+rotation = 3.1415927
+scale = Vector2(3.1111112, 3.1111114)
+sprite_frames = SubResource("SpriteFrames_nhekh")
+animation = &"effect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1072768339]
+position = Vector2(6, -24)
+rotation = 3.1415927
+shape = SubResource("CapsuleShape2D_8auoo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

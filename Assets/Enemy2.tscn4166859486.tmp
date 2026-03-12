@@ -1,0 +1,305 @@
+[gd_scene format=3 uid="uid://duq88aidpxkm0"]
+
+[ext_resource type="Script" uid="uid://bdofctfn3j454" path="res://Scripts/Enemy2.gd" id="1_wk0ny"]
+[ext_resource type="Texture2D" uid="uid://60tspcej8q66" path="res://Textures/Base/Kla'ed - Scout - Engine.png" id="3_p2fd5"]
+[ext_resource type="Texture2D" uid="uid://dnm4yvx06mov" path="res://Textures/Base/Kla'ed - Torpedo Ship - Weapons.png" id="3_wk0ny"]
+[ext_resource type="Texture2D" uid="uid://cwtphegyjjhce" path="res://Textures/Base/Destruction/PNGs/Kla'ed - Torpedo Ship - Destruction.png" id="3_xacyc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xby7n"]
+radius = 35.057095
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xacyc"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(0, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2fd5"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(64, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtyaj"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(128, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drx6f"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(192, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yneln"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(256, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hov2p"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(320, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp7ph"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(384, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo34d"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(448, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6ets"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(512, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys7cp"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(576, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_354a0"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(640, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5xgv"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(704, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7fx4"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(768, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esfem"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(832, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2hjk"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(896, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ij05"]
+atlas = ExtResource("3_wk0ny")
+region = Rect2(960, 10, 64, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwx4o"]
+atlas = ExtResource("3_xacyc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vahlg"]
+atlas = ExtResource("3_xacyc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3523"]
+atlas = ExtResource("3_xacyc")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l0l7"]
+atlas = ExtResource("3_xacyc")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dobnu"]
+atlas = ExtResource("3_xacyc")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw61t"]
+atlas = ExtResource("3_xacyc")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ex3kt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xacyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2fd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtyaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drx6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yneln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hov2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp7ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo34d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6ets")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys7cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_354a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5xgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7fx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esfem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2hjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ij05")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_vwx4o")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_vahlg")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_w3523")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_5l0l7")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_dobnu")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_hw61t")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akx8l"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(0, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_led0u"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(64, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fub3i"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(128, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nypb6"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(192, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8d6t"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(256, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73ina"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(320, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkgni"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(384, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y81f"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(448, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhqhg"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(512, 33, 64, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v01vq"]
+atlas = ExtResource("3_p2fd5")
+region = Rect2(576, 33, 64, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amenr"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_akx8l")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_led0u")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_fub3i")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_nypb6")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_v8d6t")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_73ina")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_mkgni")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_0y81f")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_nhqhg")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_v01vq")
+}],
+"loop": true,
+"name": &"effect",
+"speed": 5.0
+}]
+
+[node name="Enemy2" type="CharacterBody2D" unique_id=1464264140]
+script = ExtResource("1_wk0ny")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1618985137]
+visible = false
+shape = SubResource("CircleShape2D_xby7n")
+
+[node name="TorpedoLeft1" type="Node2D" parent="." unique_id=1243199539]
+position = Vector2(-66, 44)
+
+[node name="TorpedoLeft2" type="Node2D" parent="." unique_id=2140064225]
+position = Vector2(-46, 44)
+
+[node name="TorpedoLeft3" type="Node2D" parent="." unique_id=2068060112]
+position = Vector2(-27, 44)
+
+[node name="TorpedoRight1" type="Node2D" parent="." unique_id=186407818]
+position = Vector2(27, 44)
+
+[node name="TorpedoRight2" type="Node2D" parent="." unique_id=2067252588]
+position = Vector2(47, 44)
+
+[node name="TorpedoRight3" type="Node2D" parent="." unique_id=2132687949]
+position = Vector2(66, 44)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=654359779]
+texture_filter = 1
+rotation = -3.1415927
+scale = Vector2(3.25, 3.25)
+sprite_frames = SubResource("SpriteFrames_ex3kt")
+animation = &"die"
+
+[node name="IdleEffect_1" type="AnimatedSprite2D" parent="." unique_id=654100302]
+texture_filter = 1
+position = Vector2(-85, -45)
+rotation = -3.1415927
+scale = Vector2(1.3146669, 1.9122428)
+sprite_frames = SubResource("SpriteFrames_amenr")
+animation = &"effect"
+
+[node name="IdleEffect_2" type="AnimatedSprite2D" parent="." unique_id=709606988]
+texture_filter = 1
+position = Vector2(83.99999, -45)
+rotation = -3.1415927
+scale = Vector2(1.3146669, 1.9122428)
+sprite_frames = SubResource("SpriteFrames_amenr")
+animation = &"effect"
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1509913184]
+one_shot = true

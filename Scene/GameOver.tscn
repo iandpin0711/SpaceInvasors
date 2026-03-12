@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dltcoqif4rj17"]
+
+[ext_resource type="Script" uid="uid://xusp6jdp4ae1" path="res://Scripts/GameOver.gd" id="1_3cf28"]
+[ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="2_wwxlo"]
+[ext_resource type="Texture2D" uid="uid://668xemrn2wdu" path="res://Textures/gameover.png" id="3_sp6ne"]
+[ext_resource type="AudioStream" uid="uid://bpg54arsjb73j" path="res://Textures/Audio/gameover.mp3" id="4_sp6ne"]
+[ext_resource type="Texture2D" uid="uid://bf325pyb1g2mr" path="res://Textures/Button/restart_button.png" id="5_lofy6"]
+[ext_resource type="Texture2D" uid="uid://b4ccsnbpjucj0" path="res://Textures/Button/exit_button.png" id="6_8wu08"]
+
+[node name="GameOver" type="Control" unique_id=2047216795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3cf28")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1206502628]
+z_index = -100
+texture_filter = 1
+position = Vector2(296.2732, 405.162)
+rotation = -3.1415925
+scale = Vector2(4.7224026, 3.1412308)
+texture = ExtResource("2_wwxlo")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1556824534]
+position = Vector2(303, 264)
+scale = Vector2(0.86029416, 0.86029416)
+texture = ExtResource("3_sp6ne")
+
+[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="." unique_id=536777286]
+position = Vector2(264, 402)
+stream = ExtResource("4_sp6ne")
+autoplay = true
+
+[node name="Restart" type="TextureButton" parent="." unique_id=873145377]
+z_index = 100
+texture_filter = 1
+layout_mode = 0
+offset_left = 236.00002
+offset_top = 424.0
+offset_right = 830.0
+offset_bottom = 600.0
+scale = Vector2(0.2411703, 0.2411703)
+texture_normal = ExtResource("5_lofy6")
+
+[node name="Exit" type="TextureButton" parent="." unique_id=511050931]
+z_index = 100
+texture_filter = 1
+layout_mode = 0
+offset_left = 236.00002
+offset_top = 515.0
+offset_right = 830.0
+offset_bottom = 691.0
+scale = Vector2(0.2411703, 0.2411703)
+texture_normal = ExtResource("6_8wu08")
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b7h8al6xp8515"]
+
+[ext_resource type="Script" uid="uid://06w5dif4eepk" path="res://Scripts/ShieldPowerup.gd" id="1_m5kks"]
+[ext_resource type="Texture2D" uid="uid://di20g6l1ehyuq" path="res://Textures/powerup.png" id="2_2iyae"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_koaoo"]
+radius = 34.36568
+
+[node name="ShieldPowerUp" type="Area2D" unique_id=1897940466]
+script = ExtResource("1_m5kks")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1172011354]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_2iyae")
+region_enabled = true
+region_rect = Rect2(436, 70, 354, 342)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1289319357]
+shape = SubResource("CircleShape2D_koaoo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

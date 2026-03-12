@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bcueu1lt21knd"]
+
+[ext_resource type="Script" uid="uid://bvvvxcwg4m7a3" path="res://Scripts/Spawner.gd" id="1_se8vl"]
+
+[node name="Spawner" type="Node2D" unique_id=287377373]
+script = ExtResource("1_se8vl")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1007167492]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="PowerSpawnTimer" type="Timer" parent="." unique_id=902816429]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="PowerSpawnTimer" to="." method="_on_power_spawn_timer_timeout"]

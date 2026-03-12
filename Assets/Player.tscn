@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://dcaf51o1wdttd"]
+
+[ext_resource type="Script" uid="uid://bw6g33qv5iwwr" path="res://Scripts/Player.gd" id="1_chitn"]
+[ext_resource type="Texture2D" uid="uid://bb6lvila2t83b" path="res://Textures/Sprite/Ship/base_ship.png" id="2_l8qxc"]
+[ext_resource type="Texture2D" uid="uid://dskoh31ricif3" path="res://Textures/Sprite/Main Ship - Engine Effects/PNGs/effect.png" id="4_ng366"]
+[ext_resource type="Texture2D" uid="uid://dfa28bxujdbng" path="res://Textures/Sprite/Shields/PNGs/Main Ship - Shields - Front and Side Shield.png" id="5_6vidr"]
+[ext_resource type="AudioStream" uid="uid://yddptuaerjxj" path="res://Textures/Audio/laser.mp3" id="5_wmw2k"]
+[ext_resource type="AudioStream" uid="uid://blslk1ko77ggg" path="res://Textures/Audio/hit.wav" id="6_wmw2k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpd1a"]
+radius = 33.48806
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqnu1"]
+atlas = ExtResource("5_6vidr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j65wn"]
+atlas = ExtResource("5_6vidr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0rfj"]
+atlas = ExtResource("5_6vidr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05608"]
+atlas = ExtResource("5_6vidr")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2syo8"]
+atlas = ExtResource("5_6vidr")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqnxr"]
+atlas = ExtResource("5_6vidr")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ed6nx"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_jqnu1")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_j65wn")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_y0rfj")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_05608")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_2syo8")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_uqnxr")
+}],
+"loop": true,
+"name": &"effect",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vidr"]
+atlas = ExtResource("4_ng366")
+region = Rect2(0, 31, 48, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmw2k"]
+atlas = ExtResource("4_ng366")
+region = Rect2(48, 31, 48, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0vyv"]
+atlas = ExtResource("4_ng366")
+region = Rect2(96, 31, 48, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umheq"]
+atlas = ExtResource("4_ng366")
+region = Rect2(144, 31, 48, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqnu1"]
+animations = [{
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_6vidr")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_wmw2k")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_j0vyv")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_umheq")
+}],
+"loop": true,
+"name": &"effect",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1346989663]
+z_index = 100
+collision_mask = 28
+script = ExtResource("1_chitn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1678882562]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("2_l8qxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492198413]
+visible = false
+position = Vector2(-0.4423027, -0.24999619)
+shape = SubResource("CircleShape2D_tpd1a")
+
+[node name="BulletPosition" type="Node2D" parent="." unique_id=1507582634]
+unique_name_in_owner = true
+position = Vector2(0, -44)
+
+[node name="ShootCooldown" type="Timer" parent="." unique_id=2104002447]
+unique_name_in_owner = true
+wait_time = 0.15
+one_shot = true
+
+[node name="InvincibilityTimer" type="Timer" parent="." unique_id=616320258]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
+
+[node name="TripleShotTimer" type="Timer" parent="." unique_id=203337013]
+one_shot = true
+
+[node name="Shield" type="AnimatedSprite2D" parent="." unique_id=1658103745]
+texture_filter = 1
+position = Vector2(0, 2.9999995)
+scale = Vector2(2.188, 2.188)
+sprite_frames = SubResource("SpriteFrames_ed6nx")
+animation = &"effect"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1208650027]
+texture_filter = 1
+position = Vector2(0.49999988, 41)
+scale = Vector2(0.6875, 1)
+sprite_frames = SubResource("SpriteFrames_jqnu1")
+animation = &"effect"
+frame_progress = 0.32637733
+
+[node name="BulletPositionLeft" type="Node2D" parent="." unique_id=1072295693]
+unique_name_in_owner = true
+position = Vector2(-35, -44)
+
+[node name="BulletPositionRight" type="Node2D" parent="." unique_id=20941711]
+unique_name_in_owner = true
+position = Vector2(36, -44)
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=1931675086]
+stream = ExtResource("5_wmw2k")
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="." unique_id=1743386840]
+stream = ExtResource("6_wmw2k")
+
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
+[connection signal="timeout" from="TripleShotTimer" to="." method="_on_triple_shot_timer_timeout"]

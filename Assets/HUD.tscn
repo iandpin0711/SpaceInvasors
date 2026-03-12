@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dnvfc3x6d2ee0"]
+
+[ext_resource type="Script" uid="uid://cqw44qxf581nm" path="res://Scripts/HUD.gd" id="1_h57ut"]
+[ext_resource type="PackedScene" uid="uid://bbmervyxtm642" path="res://Assets/LifeIcon.tscn" id="2_jdvxe"]
+
+[node name="HUD" type="Control" unique_id=50843658]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h57ut")
+
+[node name="LifeContainer" type="HBoxContainer" parent="." unique_id=929118123]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 128.0
+offset_bottom = 51.0
+scale = Vector2(1.4207428, 1.4207428)
+theme_override_constants/separation = 10
+
+[node name="LifeIcon" parent="LifeContainer" unique_id=838840121 instance=ExtResource("2_jdvxe")]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="." unique_id=1819907967]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 25.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1

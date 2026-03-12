@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bqelxagj60r2v"]
+
+[ext_resource type="Script" uid="uid://dtpk6wehwcbf5" path="res://Scripts/Win.gd" id="1_kx1dy"]
+[ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="2_y8owf"]
+[ext_resource type="Texture2D" uid="uid://v2tn7dbntnrw" path="res://Textures/victory.png" id="3_58yip"]
+[ext_resource type="Texture2D" uid="uid://b4ccsnbpjucj0" path="res://Textures/Button/exit_button.png" id="4_y8owf"]
+[ext_resource type="AudioStream" uid="uid://chyf5a80dkvt3" path="res://Textures/Audio/win.mp3" id="5_f2fyf"]
+
+[node name="Win" type="Control" unique_id=2047216795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kx1dy")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1206502628]
+z_index = -100
+texture_filter = 1
+position = Vector2(296.2732, 405.162)
+rotation = -3.1415925
+scale = Vector2(4.7224026, 3.1412308)
+texture = ExtResource("2_y8owf")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1839068181]
+position = Vector2(303, 264)
+scale = Vector2(0.86029416, 0.86029416)
+texture = ExtResource("3_58yip")
+
+[node name="Exit" type="TextureButton" parent="." unique_id=841299970]
+z_index = 100
+texture_filter = 1
+layout_mode = 0
+offset_left = 236.00002
+offset_top = 439.00006
+offset_right = 830.0
+offset_bottom = 625.00006
+scale = Vector2(0.2411703, 0.2411703)
+texture_normal = ExtResource("4_y8owf")
+
+[node name="WinMusic" type="AudioStreamPlayer2D" parent="." unique_id=1136585846]
+position = Vector2(264, 402)
+stream = ExtResource("5_f2fyf")
+autoplay = true
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
