@@ -27,6 +27,8 @@ var side_margin = 120
 
 # Nodes
 @onready var shoot_sound = $ShootSound
+@onready var laser_charged_sound = $LaserCharged
+@onready var laser_shot_sound = $LaserShot
 @onready var boss_timer = $BossStartTimer
 @onready var bullet_pos = $BulletPosition
 @onready var laser1_pos = $Laser1Position
@@ -45,13 +47,11 @@ func _physics_process(delta):
 	if not active:
 		return
 
-	# Move down until stop_y
 	if position.y < stop_y:
 		position.y += VERTICAL_SPEED * delta
 		if position.y >= stop_y:
 			position.y = stop_y
 	else:
-		# Move left/right
 		position.x += horizontal_speed * horizontal_dir * delta
 		var view_rect = get_viewport_rect()
 		if position.x < side_margin:
@@ -63,7 +63,7 @@ func _physics_process(delta):
 
 # Start boss when score reaches threshold
 func _on_score_increment(amount):
-	if Signals.score >= 300 and not boss_started:
+	if Signals.score >= 70 and not boss_started:
 		boss_started = true
 		var spawner = get_tree().current_scene.get_node_or_null("Spawner")
 		if spawner and spawner.spawnTimer:
@@ -97,7 +97,6 @@ func start_attack_routine():
 		if not is_inside_tree():
 			return
 
-		# Randomly choose attack type
 		if randi() % 2 == 0:
 			await execute_bullet_attack()
 		else:
@@ -137,11 +136,20 @@ func execute_laser_attack() -> void:
 
 	$Sprite2D.play("attack")
 
+	# Start charging sound
+	laser_charged_sound.stop()
+	laser_charged_sound.play()
+
 	# Wait until attack animation reaches frame 14
 	while $Sprite2D.frame < 14 and not dying:
 		if not is_inside_tree():
 			return
 		await get_tree().process_frame
+
+	# Stop charging and play laser shot
+	laser_charged_sound.stop()
+	laser_shot_sound.stop()
+	laser_shot_sound.play()
 
 	# Spawn lasers
 	var laser1 = preload("res://Assets/BossLaser.tscn").instantiate()
