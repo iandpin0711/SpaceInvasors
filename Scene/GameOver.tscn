@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xusp6jdp4ae1" path="res://Scripts/GameOver.gd" id="1_3cf28"]
 [ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/Sprite/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="2_wwxlo"]
-[ext_resource type="Texture2D" uid="uid://668xemrn2wdu" path="res://Textures/gameover.png" id="3_sp6ne"]
+[ext_resource type="Texture2D" uid="uid://668xemrn2wdu" path="res://Textures/Menu/gameover.png" id="3_sp6ne"]
 [ext_resource type="AudioStream" uid="uid://bpg54arsjb73j" path="res://Textures/Audio/gameover.mp3" id="4_sp6ne"]
 [ext_resource type="Texture2D" uid="uid://bf325pyb1g2mr" path="res://Textures/Button/restart_button.png" id="5_lofy6"]
 [ext_resource type="Texture2D" uid="uid://b4ccsnbpjucj0" path="res://Textures/Button/exit_button.png" id="6_8wu08"]

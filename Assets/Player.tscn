@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dcaf51o1wdttd"]
 
 [ext_resource type="Script" uid="uid://bw6g33qv5iwwr" path="res://Scripts/Player.gd" id="1_chitn"]
-[ext_resource type="Texture2D" uid="uid://bb6lvila2t83b" path="res://Textures/Sprite/Ship/base_ship.png" id="2_l8qxc"]
 [ext_resource type="Texture2D" uid="uid://dskoh31ricif3" path="res://Textures/Sprite/Main Ship - Engine Effects/PNGs/effect.png" id="4_ng366"]
 [ext_resource type="Texture2D" uid="uid://dfa28bxujdbng" path="res://Textures/Sprite/Shields/PNGs/Main Ship - Shields - Front and Side Shield.png" id="5_6vidr"]
 [ext_resource type="AudioStream" uid="uid://yddptuaerjxj" path="res://Textures/Audio/laser.mp3" id="5_wmw2k"]
 [ext_resource type="AudioStream" uid="uid://blslk1ko77ggg" path="res://Textures/Audio/hit.wav" id="6_wmw2k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6vidr"]
+load_path = "res://.godot/imported/base_ship.png-5e0a530fdcc02a4002715b712009ff42.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpd1a"]
 radius = 33.48806
@@ -105,7 +107,7 @@ script = ExtResource("1_chitn")
 unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(2.6, 2.6)
-texture = ExtResource("2_l8qxc")
+texture = SubResource("CompressedTexture2D_6vidr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492198413]
 visible = false

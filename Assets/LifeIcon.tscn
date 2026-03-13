@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://bbmervyxtm642"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_76s0e"]
-load_path = "res://.godot/imported/Heart.png-7a8af94d6810c8d0e9a55758841f0762.ctex"
+[ext_resource type="Texture2D" uid="uid://igqoodfx37hb" path="res://Textures/Sprite/Heart/Heart.png" id="1_u68x5"]
 
 [node name="LifeIcon" type="TextureRect" unique_id=838840121]
 texture_filter = 1
 offset_right = 25.0
 offset_bottom = 30.0
 scale = Vector2(1.2867932, 1.2867932)
-texture = SubResource("CompressedTexture2D_76s0e")
+texture = ExtResource("1_u68x5")
 expand_mode = 3

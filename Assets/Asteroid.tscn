@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b6c02x4njjwb3"]
 
-[ext_resource type="Texture2D" uid="uid://b3r61it4osqha" path="res://Textures/Asteroid 01 - Explode.png" id="1_3lfku"]
+[ext_resource type="Texture2D" uid="uid://b3r61it4osqha" path="res://Textures/Sprite/Asteroid 01 - Explode.png" id="1_3lfku"]
 [ext_resource type="Script" uid="uid://ohwww8d4nd2n" path="res://Scripts/Asteroid.gd" id="1_stxti"]
-[ext_resource type="Texture2D" uid="uid://curfhophhc1ac" path="res://Textures/Asteroid 01 - Base.png" id="2_stxti"]
+[ext_resource type="Texture2D" uid="uid://curfhophhc1ac" path="res://Textures/Sprite/Asteroid 01 - Base.png" id="2_stxti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpavc"]
 atlas = ExtResource("1_3lfku")

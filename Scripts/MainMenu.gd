@@ -12,13 +12,6 @@ func _ready():
 	# Set slider to match current volume
 	h_slider.value = linear_vol
 
-# Start game when button is pressed
-func _on_texture_button_pressed():
-	# Stop menu music
-	music.stop()
-	# Load the main game scene
-	get_tree().change_scene_to_file("res://Scene/MainScene.tscn")
-
 # Change music volume with slider
 func _on_h_slider_value_changed(value: float) -> void:
 	# Clamp value to avoid zero or invalid values
@@ -29,3 +22,10 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 	# Apply volume to the main audio bus
 	AudioServer.set_bus_volume_db(0, linear_to_db(adjusted_value))
+
+# Start game when button is pressed
+func _on_play_button_pressed():
+	# Stop menu music
+	music.stop()
+	# Load the main game scene
+	get_tree().change_scene_to_file("res://Scene/MainScene.tscn")

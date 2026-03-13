@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d260jb0id7nm0"]
 
 [ext_resource type="Script" uid="uid://cpw8wa5sj30km" path="res://Scripts/BulletEnemy.gd" id="1_te72g"]
-[ext_resource type="Texture2D" uid="uid://crck0osja585n" path="res://Textures/Projectiles/Player_charged_beam (16 x 16).png" id="2_te72g"]
+[ext_resource type="Texture2D" uid="uid://crck0osja585n" path="res://Textures/Sprite/Projectiles/Player_charged_beam (16 x 16).png" id="2_te72g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7qka"]
 atlas = ExtResource("2_te72g")

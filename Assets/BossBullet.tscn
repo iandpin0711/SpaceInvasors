@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cus3p2sqg3yhx"]
 
 [ext_resource type="Script" uid="uid://b74twfieef0o1" path="res://Scripts/BossBullet.gd" id="1_8auoo"]
-[ext_resource type="Texture2D" uid="uid://gbyhyid8mhli" path="res://Textures/Fire Effect and Bullet 16x16.png" id="2_8auoo"]
+[ext_resource type="Texture2D" uid="uid://gbyhyid8mhli" path="res://Textures/Sprite/Fire Effect and Bullet 16x16.png" id="2_8auoo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcy20"]
 atlas = ExtResource("2_8auoo")

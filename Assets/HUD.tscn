@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqw44qxf581nm" path="res://Scripts/HUD.gd" id="1_h57ut"]
 [ext_resource type="PackedScene" uid="uid://bbmervyxtm642" path="res://Assets/LifeIcon.tscn" id="2_jdvxe"]
+[ext_resource type="Texture2D" uid="uid://igqoodfx37hb" path="res://Textures/Sprite/Heart/Heart.png" id="3_spylo"]
 
 [node name="HUD" type="Control" unique_id=50843658]
 layout_mode = 3
@@ -24,6 +25,7 @@ theme_override_constants/separation = 10
 
 [node name="LifeIcon" parent="LifeContainer" unique_id=838840121 instance=ExtResource("2_jdvxe")]
 layout_mode = 2
+texture = ExtResource("3_spylo")
 
 [node name="Score" type="Label" parent="." unique_id=1819907967]
 layout_mode = 1

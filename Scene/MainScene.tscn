@@ -67,7 +67,7 @@ anchor_mode = 0
 script = ExtResource("6_ly247")
 
 [node name="Boss" parent="." unique_id=1464264140 instance=ExtResource("7_nr04c")]
-position = Vector2(297, -278)
+position = Vector2(297, -374)
 
 [node name="SceneMusic" type="AudioStreamPlayer2D" parent="." unique_id=650124322]
 position = Vector2(236.00002, 475)

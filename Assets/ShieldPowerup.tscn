@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7h8al6xp8515"]
 
 [ext_resource type="Script" uid="uid://06w5dif4eepk" path="res://Scripts/ShieldPowerup.gd" id="1_m5kks"]
-[ext_resource type="Texture2D" uid="uid://di20g6l1ehyuq" path="res://Textures/powerup.png" id="2_2iyae"]
+[ext_resource type="Texture2D" uid="uid://di20g6l1ehyuq" path="res://Textures/Sprite/powerup.png" id="2_2iyae"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_koaoo"]
 radius = 34.36568

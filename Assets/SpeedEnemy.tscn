@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b2hneonyt1a0i"]
 
 [ext_resource type="Script" uid="uid://il7l5x0tbmem" path="res://Scripts/SpeedEnemy.gd" id="1_xre4o"]
-[ext_resource type="Texture2D" uid="uid://bewnv0kl4ky4x" path="res://Textures/Base/Destruction/PNGs/Kla'ed - Fighter - Destruction.png" id="2_0fslj"]
-[ext_resource type="Texture2D" uid="uid://cpaj111252p21" path="res://Textures/Base/PNGs/Kla'ed - Fighter - Base.png" id="3_voqep"]
-[ext_resource type="Texture2D" uid="uid://b7w7dolyn33cq" path="res://Textures/Base/Kla'ed - Fighter - Engine.png" id="4_1t18w"]
+[ext_resource type="Texture2D" uid="uid://bewnv0kl4ky4x" path="res://Textures/Sprite/Base/Destruction/PNGs/Kla'ed - Fighter - Destruction.png" id="2_0fslj"]
+[ext_resource type="Texture2D" uid="uid://cpaj111252p21" path="res://Textures/Sprite/Base/PNGs/Kla'ed - Fighter - Base.png" id="3_voqep"]
+[ext_resource type="Texture2D" uid="uid://b7w7dolyn33cq" path="res://Textures/Sprite/Base/Kla'ed - Fighter - Engine.png" id="4_1t18w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_173md"]
 atlas = ExtResource("2_0fslj")

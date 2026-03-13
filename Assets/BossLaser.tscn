@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8lmxkxy8k2qq"]
 
 [ext_resource type="Script" uid="uid://bs1f0hgtf4udi" path="res://Scripts/EnemyLaser.gd" id="1_31hcv"]
-[ext_resource type="Texture2D" uid="uid://dee2410wk63dg" path="res://Textures/PNGs/Kla'ed - Ray.png" id="2_x8tdu"]
+[ext_resource type="Texture2D" uid="uid://dee2410wk63dg" path="res://Textures/Sprite/PNGs/Kla'ed - Ray.png" id="2_x8tdu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpb7f"]
 atlas = ExtResource("2_x8tdu")
