@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bj1sy0xryxcel" path="res://Scripts/MainMenu.gd" id="1_6o0c3"]
 [ext_resource type="Texture2D" uid="uid://dsyyy6hsy7anr" path="res://Textures/Sprite/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="2_d4yab"]
 [ext_resource type="Texture2D" uid="uid://do5avwj2o2888" path="res://Textures/Sprite/SpaceShooterAssets/starBig.png" id="3_o3nbu"]
+[ext_resource type="Texture2D" uid="uid://dsj1ed5btp6y0" path="res://Textures/Menu/title.png" id="4_qf8tx"]
 [ext_resource type="PackedScene" uid="uid://bcueu1lt21knd" path="res://Assets/Spawner.tscn" id="5_o3nbu"]
-[ext_resource type="Texture2D" uid="uid://b6b8d0iyk21ug" path="res://Textures/title.png" id="5_v3p41"]
 [ext_resource type="Script" uid="uid://dq4ixuu82krrw" path="res://Scripts/SpawnerMenu.gd" id="6_v3p41"]
 [ext_resource type="Texture2D" uid="uid://boafpf83jv1rt" path="res://Textures/Button/play_button.png" id="7_6nqpc"]
 [ext_resource type="AudioStream" uid="uid://blktohpd3uyk2" path="res://Textures/Audio/menu.mp3" id="8_qf8tx"]
@@ -62,7 +62,7 @@ scale_amount_min = 0.5
 z_index = 100
 texture_filter = 1
 position = Vector2(301, 264)
-texture = ExtResource("5_v3p41")
+texture = ExtResource("4_qf8tx")
 
 [node name="PlayButton" type="TextureButton" parent="." unique_id=1304663842]
 z_index = 100

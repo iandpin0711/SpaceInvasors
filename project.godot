@@ -27,6 +27,7 @@ Signals="*uid://3iige28mqfb7"
 
 window/size/viewport_width=600
 window/size/viewport_height=800
+window/size/always_on_top=true
 window/stretch/mode="viewport"
 
 [input]
@@ -65,3 +66,5 @@ shoot={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

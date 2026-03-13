@@ -47,13 +47,17 @@ func _physics_process(delta):
 	if not active:
 		return
 
+	# Move boss down until it reaches stop_y
 	if position.y < stop_y:
 		position.y += VERTICAL_SPEED * delta
 		if position.y >= stop_y:
 			position.y = stop_y
 	else:
+		# Move boss left and right across the screen
 		position.x += horizontal_speed * horizontal_dir * delta
 		var view_rect = get_viewport_rect()
+
+		# Change direction if boss reaches screen limits
 		if position.x < side_margin:
 			position.x = side_margin
 			horizontal_dir = 1
@@ -63,18 +67,25 @@ func _physics_process(delta):
 
 # Start boss when score reaches threshold
 func _on_score_increment(amount):
-	if Signals.score >= 70 and not boss_started:
+	if Signals.score >= 300 and not boss_started:
 		boss_started = true
+
+		# Stop enemy spawner when boss fight begins
 		var spawner = get_tree().current_scene.get_node_or_null("Spawner")
 		if spawner and spawner.spawnTimer:
 			spawner.spawnTimer.stop()
+
+		# Start timer that will spawn the boss
 		boss_timer.start()
 
 # Called when boss timer finishes
 func _on_boss_start_timer_timeout():
 	visible = true
 	active = true
+
+	# Spawn boss above the screen
 	position = Vector2(get_viewport_rect().size.x / 2, -200)
+
 	yield_to_stop_y()
 
 # Wait until boss reaches stop_y, then pause before attacking
@@ -84,7 +95,10 @@ func yield_to_stop_y() -> void:
 			return
 		await get_tree().process_frame
 
+	# Make sure boss stops exactly at stop_y
 	position.y = stop_y
+
+	# Wait before starting the attack phase
 	await get_tree().create_timer(initial_wait).timeout
 
 	if not attack_in_progress:
@@ -97,11 +111,13 @@ func start_attack_routine():
 		if not is_inside_tree():
 			return
 
+		# Randomly choose which attack to perform
 		if randi() % 2 == 0:
 			await execute_bullet_attack()
 		else:
 			await execute_laser_attack()
 
+		# Wait a random time before the next attack
 		var cooldown_duration = randf_range(attack_cooldown_min, attack_cooldown_max)
 
 		if not is_inside_tree():
@@ -114,19 +130,27 @@ func execute_bullet_attack() -> void:
 	if dying:
 		return
 	
+	# Random number of bullets to shoot
 	var bullet_count = randi() % 4 + 3
+
 	for i in range(bullet_count):
 		shoot_sound.stop()
 		shoot_sound.play()
+
+		# Create bullet
 		var bullet = preload("res://Assets/BossBullet.tscn").instantiate()
 		bullet.global_position = bullet_pos.global_position
 
+		# Aim bullet at player position
 		if player:
 			var dir = (player.global_position - bullet.global_position).normalized()
 			bullet.rotation = dir.angle() + PI/2
 			bullet.set("direction", dir)
 
+		# Add bullet to the scene
 		get_tree().current_scene.add_child(bullet)
+
+		# Small delay between each bullet
 		await get_tree().create_timer(1).timeout
 
 # Fire lasers from both sides
@@ -134,41 +158,43 @@ func execute_laser_attack() -> void:
 	if dying:
 		return
 
+	# Play attack animation
 	$Sprite2D.play("attack")
 
-	# Start charging sound
+	# Play charging sound before lasers appear
 	laser_charged_sound.stop()
 	laser_charged_sound.play()
 
-	# Wait until attack animation reaches frame 14
+	# Wait until animation reaches frame 14
 	while $Sprite2D.frame < 14 and not dying:
 		if not is_inside_tree():
 			return
 		await get_tree().process_frame
 
-	# Stop charging and play laser shot
+	# Stop charging sound and play laser shot sound
 	laser_charged_sound.stop()
 	laser_shot_sound.stop()
 	laser_shot_sound.play()
 
-	# Spawn lasers
+	# Spawn left laser
 	var laser1 = preload("res://Assets/BossLaser.tscn").instantiate()
 	laser1.position = laser1_pos.position
 	laser1.z_index = $Sprite2D.z_index - 1
 	add_child(laser1)
 
+	# Spawn right laser
 	var laser2 = preload("res://Assets/BossLaser.tscn").instantiate()
 	laser2.position = laser2_pos.position
 	laser2.z_index = $Sprite2D.z_index - 1
 	add_child(laser2)
 
-	# Wait until animation ends
+	# Keep lasers active until animation reaches frame 55
 	while $Sprite2D.frame < 55 and not dying:
 		if not is_inside_tree():
 			return
 		await get_tree().process_frame
 
-	# Remove lasers
+	# Remove lasers after attack ends
 	if is_instance_valid(laser1):
 		laser1.queue_free()
 	if is_instance_valid(laser2):
@@ -179,13 +205,19 @@ func take_damage():
 	if dying:
 		return
 
+	# Reduce boss health
 	health -= 1
+
 	if health <= 0:
 		dying = true
 		active = false
 		attack_in_progress = false
+
+		# Disable collisions and effects
 		$CollisionShape2D.set_deferred("disabled", true)
 		$IdleEffect.visible = false
+
+		# Play death animation
 		$Sprite2D.play("die")
 
 # When death animation finishes
